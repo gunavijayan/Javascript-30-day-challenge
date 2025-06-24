@@ -1,10 +1,11 @@
 var once = function(fn) {
     let called = false;
     return function(...args){
-        if(!called) {
-            called = true;
-            console.log(fn.apply(this, args));
+        if(called) {
+            console.log(undefined);
         }
+        called = true;
+        console.log(fn(...args);
     }
 };
 
